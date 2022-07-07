@@ -1,0 +1,154 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Test API for Project",
+    "description" : "This is a test API for McDonald's internship 2022. The API is able to get, create, and delete employees. An employee has an id, a name, and a title.",
+    "termsOfService" : "https://www.linkedin.com/in/elias-singler",
+    "contact" : {
+      "name" : "Elias Singler",
+      "url" : "https://www.linkedin.com/in/elias-singler",
+      "email" : "elias.singler@us.mcd.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "1.0.2"
+  },
+  "servers" : [ {
+    "url" : "http://3.15.179.5:8080/"
+  } ],
+  "tags" : [ {
+    "name" : "Employees",
+    "description" : "Access information from Employee database"
+  } ],
+  "paths" : {
+    "/employees" : {
+      "get" : {
+        "tags" : [ "Employees" ],
+        "description" : "Returns a list of all the employees in the database",
+        "responses" : {
+          "200" : {
+            "description" : "Successful pull of employees",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Employee"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Something went wrong"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Employees" ],
+        "description" : "Adds a new employee to the database",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Employee"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successfully created new employee"
+          },
+          "400" : {
+            "description" : "Something went wrong"
+          }
+        }
+      }
+    },
+    "/employees/{id}" : {
+      "get" : {
+        "tags" : [ "Employees" ],
+        "description" : "Returns information from ID of a specific employee",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "The id of the employee",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "example" : 50
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully obtained information about employee",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Employee"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Employees" ],
+        "description" : "Deletes an employee from database",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Employee id to delete",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully deleted employee"
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Employee not found"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Employee" : {
+        "required" : [ "id", "name", "title" ],
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Elias Singler"
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "Intern"
+          }
+        },
+        "example" : {
+          "name" : "Elias Singler",
+          "id" : 1,
+          "title" : "Intern"
+        }
+      }
+    }
+  }
+}
