@@ -1,0 +1,29 @@
+﻿{
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "inferenceAccelerators": [],
+  "containerDefinitions": [
+    {
+      "name": "mcdapi",
+      "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/mcdapi:latest",
+      "resourceRequirements": null,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": "80",
+          "protocol": "tcp"
+        }
+
+      ]
+    }
+  ],
+  "volumes": [],
+  "networkMode": "awsvpc",
+  "memory": "512",
+  "cpu": "256",
+  "executionRoleArn": "arn:aws:iam::293697848457:role/ecs-devops-sandbox-execution-role",
+  "family": "mcdapi",
+  "taskRoleArn": "",
+  "placementConstraints": []
+}
