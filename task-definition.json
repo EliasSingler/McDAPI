@@ -1,11 +1,11 @@
 ﻿{
   "requiresCompatibilities": [
-    "EC2"
+    "Fargate"
   ],
   "inferenceAccelerators": [],
   "containerDefinitions": [
     {
-      "name": "mcdapi",
+      "name": "McDAPI",
       "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/mcdapi:latest",
       "resourceRequirements": null,
       "essential": true,
