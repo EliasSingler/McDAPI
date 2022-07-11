@@ -19,7 +19,7 @@
     }
   ],
   "volumes": [],
-  "networkMode": "awsvpc",
+  "networkMode": "host",
   "memory": "512",
   "cpu": "256",
   "executionRoleArn": "arn:aws:iam::293697848457:role/github-action",
