@@ -2,7 +2,6 @@ on: push
 
 jobs:
   build:
-    
     name: Build Image
     runs-on: ubuntu-latest
 
@@ -32,7 +31,7 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
         
-    - name: Fill in the new image ID in the Amazon ECS task definition
+    - name: Fill in new image ID in the Amazon ECS task definition
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
