@@ -31,23 +31,17 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
-    - name: Download task definition
-      run: |
-        aws ecs describe-task-definition --task-definition service --query taskDefinition > task-definition.json
-        
-    - name: Fill in the new image ID in the Amazon ECS task definition
-      id: task-def
+    - name: Render Amazon ECnS task definition
+      id: ecs-cd-starter-container
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
         container-name: mcdcontainer
-        image: ${{ steps.build-image.outputs.image }}
+        image: ${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:$IMAGE_TAG
 
-    - name: Run Task on Amazon ECS
-      uses: smitp/amazon-ecs-run-task@v1
+    - name: Deploy to Amazon ECS service
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: task-definition.json
-        cluster: McDCluster
-        count: 1
-        started-by: github-actions-${{ github.actor }}
-        wait-for-finish: true
+        service: Deployment
+        cluster: mcdcluster
