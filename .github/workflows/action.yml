@@ -44,4 +44,4 @@ jobs:
       with:
         task-definition: task-definition.json
         service: Deployment
-        cluster: mcdcluster
+        cluster: arn:aws:ecs:us-east-1:293697848457:cluster/McDCluster
