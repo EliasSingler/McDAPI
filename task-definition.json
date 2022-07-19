@@ -7,13 +7,7 @@
       "environmentFiles": null,
       "logConfiguration": null,
       "entryPoint": null,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "protocol": "tcp",
-          "containerPort": 80
-        }
-      ],
+      "portMappings": [],
       "command": null,
       "linuxParameters": null,
       "cpu": 0,
@@ -29,7 +23,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/mcdcontainer",
+      "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/mcdcontainer:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -56,8 +50,8 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/Deployment:1",
-  "family": "Deployment",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/McDDeploy:1",
+  "family": "McDDeploy",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -79,7 +73,7 @@
   "networkMode": null,
   "runtimePlatform": null,
   "cpu": "1024",
-  "revision": 2,
+  "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
