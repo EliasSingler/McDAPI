@@ -31,7 +31,7 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
-    - name: Render Amazon ECnS task definition
+    - name: Render Amazon ECS task definition
       id: ecs-cd-starter-container
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
