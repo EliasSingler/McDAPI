@@ -56,7 +56,7 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/Deployment:2",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/Deployment:1",
   "family": "Deployment",
   "requiresAttributes": [
     {
