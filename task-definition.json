@@ -29,7 +29,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "293697848457.dkr.ecr.us-east-2.amazonaws.com/mcdrepo:latest",
+      "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/mcdrepo:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -56,7 +56,7 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/CICD:7",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/CICD:9",
   "family": "CICD",
   "requiresAttributes": [
     {
@@ -79,7 +79,7 @@
   "networkMode": null,
   "runtimePlatform": null,
   "cpu": "256",
-  "revision": 7,
+  "revision": 9,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
