@@ -24,7 +24,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: mcdcontainer
+        ECR_REPOSITORY: mcdrepo
         IMAGE_TAG: latest
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./src/IO.Swagger
@@ -36,12 +36,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: mcdcontainer
+        container-name: mcdrepo
         image: ${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:$IMAGE_TAG
 
     - name: Deploy to Amazon ECS service 
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: task-definition.json
-        service: McDService
+        service: Deploy
         cluster: arn:aws:ecs:us-east-1:293697848457:cluster/McDCluster
+        wait-for-service-stability: true

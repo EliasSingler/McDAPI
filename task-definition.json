@@ -7,7 +7,13 @@
       "environmentFiles": null,
       "logConfiguration": null,
       "entryPoint": null,
-      "portMappings": [],
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
       "command": null,
       "linuxParameters": null,
       "cpu": 0,
@@ -19,11 +25,11 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": null,
+      "memory": 325,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/mcdcontainer:latest",
+      "image": "293697848457.dkr.ecr.us-east-2.amazonaws.com/mcdrepo:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -40,18 +46,18 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "mcdcontainer"
+      "name": "mcdrepo"
     }
   ],
   "placementConstraints": [],
-  "memory": "524",
+  "memory": "1024",
   "taskRoleArn": null,
   "compatibilities": [
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/McDDeploy:1",
-  "family": "McDDeploy",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/CICD:1",
+  "family": "CICD",
   "requiresAttributes": [
     {
       "targetId": null,
