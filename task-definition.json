@@ -25,7 +25,7 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 325,
+      "memory": 128,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
@@ -50,13 +50,13 @@
     }
   ],
   "placementConstraints": [],
-  "memory": "1024",
+  "memory": "256",
   "taskRoleArn": null,
   "compatibilities": [
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/CICD:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/CICD:7",
   "family": "CICD",
   "requiresAttributes": [
     {
@@ -78,8 +78,8 @@
   ],
   "networkMode": null,
   "runtimePlatform": null,
-  "cpu": "1024",
-  "revision": 1,
+  "cpu": "256",
+  "revision": 7,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
