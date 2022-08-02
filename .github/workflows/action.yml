@@ -44,7 +44,7 @@ jobs:
       with:
         task-definition: task-definition.json
         service: demoservice
-        cluster: arn:aws:ecs:us-east-1:293697848457:cluster/NewDemoCluster
+        cluster: arn:aws:ecs:us-east-1:293697848457:cluster/DemoCluster
 
 
         
