@@ -7,13 +7,7 @@
       "environmentFiles": null,
       "logConfiguration": null,
       "entryPoint": null,
-      "portMappings": [
-        {
-          "hostPort": 80,
-          "protocol": "tcp",
-          "containerPort": 80
-        }
-      ],
+      "portMappings": [],
       "command": null,
       "linuxParameters": null,
       "cpu": 0,
@@ -25,11 +19,11 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 128,
+      "memory": null,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/mcdrepo:latest",
+      "image": "293697848457.dkr.ecr.us-east-1.amazonaws.com/demorepo:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -46,18 +40,18 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "mcdrepo"
+      "name": "demorepo"
     }
   ],
   "placementConstraints": [],
-  "memory": "256",
+  "memory": "528",
   "taskRoleArn": null,
   "compatibilities": [
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/CICD:9",
-  "family": "CICD",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:293697848457:task-definition/demotask:1",
+  "family": "demotask",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -78,8 +72,8 @@
   ],
   "networkMode": null,
   "runtimePlatform": null,
-  "cpu": "256",
-  "revision": 9,
+  "cpu": "1024",
+  "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
