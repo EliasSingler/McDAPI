@@ -86,7 +86,7 @@ namespace IO.Swagger.Controllers
             {
                 return BadRequest();
             }
-            else return Ok(_repo.GetEmployeeById(id));
+            else return Ok(_repo.GetEmployeeById(id+1));
         }
 
         /// <summary>
